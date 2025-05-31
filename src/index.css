@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 59 130 246;
+    --color-primary-light: 96 165 250;
+    --color-secondary: 249 115 22;
+    --color-secondary-light: 251 146 60;
+    --color-success: 16 185 129;
+    --color-warning: 245 158 11;
+    --color-error: 239 68 68;
+    --color-background: 248 250 252;
+    --color-card: 255 255 255;
+  }
+
+  html, body {
+    @apply antialiased bg-background text-gray-800;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply shadow-md;
+  }
+
+  .stat-card {
+    @apply p-4 flex flex-col justify-between h-full;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors duration-200;
+  }
+
+  .sidebar-item.active {
+    @apply bg-blue-50 text-blue-600 font-medium;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white;
+  }
+
+  .btn-outline {
+    @apply border border-gray-300 hover:bg-gray-100 text-gray-700;
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    @apply bg-slate-50;
+  }
+}
